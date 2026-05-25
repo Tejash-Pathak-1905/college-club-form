@@ -3,203 +3,340 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>College Club Registration</title>
+  <title>College Club Registration — RVCE SIP 2026</title>
+  <meta name="description" content="Register your college club for SIP 2026 at RVCE. Fill in the details for the Organising Committee registration." />
+  <link rel="icon" type="image/png" href="https://sip-volunteer.vercel.app/logos/RVCE_Logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main>
-    <header class="page-header">
-      <h1>College Club Registration</h1>
-      <p class="page-subtitle">Fill in the details below to register your club. All fields marked with <span class="required-star">*</span> are required.</p>
-    </header>
 
-    <div id="success-banner" class="banner banner--success" hidden>
-      <span class="banner-icon">✓</span>
-      <span id="success-message">Registration submitted successfully!</span>
+  <!-- ===== STICKY NAVBAR ===== -->
+  <nav class="site-nav" id="siteNav">
+    <div class="nav-container">
+      <a href="#" class="nav-brand">
+        <img src="https://sip-volunteer.vercel.app/logos/RVCE_Logo.png" alt="RVCE Logo" class="nav-logo" />
+        <span class="nav-brand-text">SIP 2026 — ORGANISING COMMITTEE</span>
+      </a>
+      <div class="nav-links">
+        <a href="#hero" class="nav-link">Home</a>
+        <a href="#registrationForm" class="nav-link">Register</a>
+      </div>
+      <a href="#registrationForm" class="nav-cta">Register Now</a>
     </div>
+  </nav>
 
-    <div id="error-banner" class="banner banner--error" hidden>
-      <span class="banner-icon">!</span>
-      <span id="error-message">Submission failed. Please try again.</span>
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero" id="hero">
+    <canvas id="dotCanvas" class="dot-canvas"></canvas>
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span class="hero-title-dark">REGISTER YOUR</span>
+        <span class="hero-title-orange">CLUB FOR SIP.</span>
+      </h1>
+<div class="hero-cta-group">
+        <a href="#registrationForm" class="hero-btn-primary">Register Now</a>
+        <a href="#siteNav" class="hero-btn-secondary">Learn More</a>
+      </div>
     </div>
+  </section>
 
-    <form id="registrationForm" novalidate>
+  <!-- ===== MAIN FORM AREA ===== -->
+  <div class="content-wrapper">
+    <main>
 
-      <!-- Section 1: Club Details -->
-      <section class="form-section">
-        <h2 class="section-title">🏫 Club Details</h2>
-
-        <div class="field-group">
-          <label for="clubName">Club Name <span class="required-star">*</span></label>
-          <input
-            type="text"
-            id="clubName"
-            name="clubName"
-            placeholder="e.g. IEEE Student Branch"
-            maxlength="100"
-          />
-          <span class="error-msg" id="clubName-error"></span>
-        </div>
-      </section>
-
-      <!-- Section 2: President / POC Details -->
-      <section class="form-section">
-        <h2 class="section-title">👤 President / POC Details</h2>
-
-        <div class="field-group">
-          <label for="presidentDesignation">Designation <span class="required-star">*</span></label>
-          <select id="presidentDesignation" name="presidentDesignation">
-            <option value="President">President</option>
-            <option value="POC">POC (Point of Contact)</option>
-          </select>
-          <span class="error-msg" id="presidentDesignation-error"></span>
-        </div>
-
-        <div class="field-group">
-          <label for="presidentFullName">Full Name <span class="required-star">*</span></label>
-          <input
-            type="text"
-            id="presidentFullName"
-            name="presidentFullName"
-            placeholder="e.g. Arjun Sharma"
-            maxlength="100"
-            autocomplete="name"
-          />
-          <span class="error-msg" id="presidentFullName-error"></span>
-        </div>
-
-        <div class="field-group">
-          <label for="presidentUSN">USN (University Serial Number) <span class="required-star">*</span></label>
-          <input
-            type="text"
-            id="presidentUSN"
-            name="presidentUSN"
-            placeholder="e.g. 1RV21CS001"
-            maxlength="10"
-            style="text-transform: uppercase;"
-          />
-          <span class="error-msg" id="presidentUSN-error"></span>
-        </div>
-
-        <div class="field-group">
-          <label for="presidentPhone">Phone Number <span class="required-star">*</span></label>
-          <input
-            type="tel"
-            id="presidentPhone"
-            name="presidentPhone"
-            placeholder="e.g. 9876543210"
-            maxlength="10"
-            autocomplete="tel"
-          />
-          <span class="error-msg" id="presidentPhone-error"></span>
-        </div>
-
-        <div class="field-group">
-          <label for="presidentEmail">Email Address <span class="required-star">*</span></label>
-          <input
-            type="email"
-            id="presidentEmail"
-            name="presidentEmail"
-            placeholder="e.g. arjun@rvce.edu.in"
-            autocomplete="email"
-          />
-          <span class="error-msg" id="presidentEmail-error"></span>
-        </div>
-      </section>
-
-      <!-- Section 3: Vice President Details -->
-      <section class="form-section">
-        <h2 class="section-title">👥 Vice President Details</h2>
-
-        <div class="field-group">
-          <label for="vpDesignation">Designation <span class="required-star">*</span></label>
-          <select id="vpDesignation" name="vpDesignation">
-            <option value="Vice President">Vice President</option>
-            <option value="POC">POC (Point of Contact)</option>
-          </select>
-          <span class="error-msg" id="vpDesignation-error"></span>
-        </div>
-
-        <div class="field-group">
-          <label for="vpFullName">Full Name <span class="required-star">*</span></label>
-          <input
-            type="text"
-            id="vpFullName"
-            name="vpFullName"
-            placeholder="e.g. Priya Nair"
-            maxlength="100"
-            autocomplete="name"
-          />
-          <span class="error-msg" id="vpFullName-error"></span>
-        </div>
-
-        <div class="field-group">
-          <label for="vpUSN">USN (University Serial Number) <span class="required-star">*</span></label>
-          <input
-            type="text"
-            id="vpUSN"
-            name="vpUSN"
-            placeholder="e.g. 1RV21CS078"
-            maxlength="10"
-            style="text-transform: uppercase;"
-          />
-          <span class="error-msg" id="vpUSN-error"></span>
-        </div>
-
-        <div class="field-group">
-          <label for="vpPhone">Phone Number <span class="required-star">*</span></label>
-          <input
-            type="tel"
-            id="vpPhone"
-            name="vpPhone"
-            placeholder="e.g. 9123456780"
-            maxlength="10"
-            autocomplete="tel"
-          />
-          <span class="error-msg" id="vpPhone-error"></span>
-        </div>
-
-        <div class="field-group">
-          <label for="vpEmail">Email Address <span class="required-star">*</span></label>
-          <input
-            type="email"
-            id="vpEmail"
-            name="vpEmail"
-            placeholder="e.g. priya@rvce.edu.in"
-            autocomplete="email"
-          />
-          <span class="error-msg" id="vpEmail-error"></span>
-        </div>
-      </section>
-
-      <!-- Section 4: Additional Details -->
-      <section class="form-section">
-        <h2 class="section-title">📝 Additional Details</h2>
-
-        <div class="field-group">
-          <label for="additionalDetails">Any additional information <span class="optional-tag">(optional)</span></label>
-          <textarea
-            id="additionalDetails"
-            name="additionalDetails"
-            rows="4"
-            placeholder="e.g. Meeting schedule, club achievements, special requirements, etc."
-            maxlength="500"
-          ></textarea>
-          <span class="char-count" id="additionalDetails-count">0 / 500</span>
-          <span class="error-msg" id="additionalDetails-error"></span>
-        </div>
-      </section>
-
-      <!-- Submit -->
-      <div class="submit-area">
-        <button type="submit" id="submitBtn" class="btn-submit">
-          Submit Registration
-        </button>
+      <div id="success-banner" class="banner banner--success" hidden>
+        <span class="banner-icon">✓</span>
+        <span id="success-message">Registration submitted successfully!</span>
       </div>
 
-    </form>
-  </main>
+      <div id="error-banner" class="banner banner--error" hidden>
+        <span class="banner-icon">!</span>
+        <span id="error-message">Submission failed. Please try again.</span>
+      </div>
+
+      <div class="form-intro">
+        <h2 class="form-intro-title">Club Registration Form</h2>
+        <p class="form-intro-subtitle">Fill in the details below to register your club. All fields marked with <span class="required-star">*</span> are required.</p>
+      </div>
+
+      <form id="registrationForm" novalidate>
+
+        <!-- Section 1: Club Details -->
+        <section class="form-section">
+          <h2 class="section-title">Club Details</h2>
+
+          <div class="field-group">
+            <label for="clubName">Club Name <span class="required-star">*</span></label>
+            <input
+              type="text"
+              id="clubName"
+              name="clubName"
+              placeholder="e.g. IEEE Student Branch"
+              maxlength="100"
+            />
+            <span class="error-msg" id="clubName-error"></span>
+          </div>
+        </section>
+
+        <!-- Section 2: President / POC Details -->
+        <section class="form-section">
+          <h2 class="section-title">President / POC Details</h2>
+
+          <div class="field-group">
+            <label for="presidentDesignation">Designation <span class="required-star">*</span></label>
+            <select id="presidentDesignation" name="presidentDesignation">
+              <option value="President">President</option>
+              <option value="POC">POC (Point of Contact)</option>
+            </select>
+            <span class="error-msg" id="presidentDesignation-error"></span>
+          </div>
+
+          <div class="field-group">
+            <label for="presidentFullName">Full Name <span class="required-star">*</span></label>
+            <input
+              type="text"
+              id="presidentFullName"
+              name="presidentFullName"
+              placeholder="e.g. Arjun Sharma"
+              maxlength="100"
+              autocomplete="name"
+            />
+            <span class="error-msg" id="presidentFullName-error"></span>
+          </div>
+
+          <div class="field-group">
+            <label for="presidentUSN">USN (University Serial Number) <span class="required-star">*</span></label>
+            <input
+              type="text"
+              id="presidentUSN"
+              name="presidentUSN"
+              placeholder="e.g. 1RV21CS001"
+              maxlength="10"
+              style="text-transform: uppercase;"
+            />
+            <span class="error-msg" id="presidentUSN-error"></span>
+          </div>
+
+          <div class="field-group">
+            <label for="presidentPhone">Phone Number <span class="required-star">*</span></label>
+            <input
+              type="tel"
+              id="presidentPhone"
+              name="presidentPhone"
+              placeholder="e.g. 9876543210"
+              maxlength="10"
+              autocomplete="tel"
+            />
+            <span class="error-msg" id="presidentPhone-error"></span>
+          </div>
+
+          <div class="field-group">
+            <label for="presidentEmail">Email Address <span class="required-star">*</span></label>
+            <input
+              type="email"
+              id="presidentEmail"
+              name="presidentEmail"
+              placeholder="e.g. arjun@rvce.edu.in"
+              autocomplete="email"
+            />
+            <span class="error-msg" id="presidentEmail-error"></span>
+          </div>
+        </section>
+
+        <!-- Section 3: Vice President Details -->
+        <section class="form-section">
+          <h2 class="section-title">Vice President Details</h2>
+
+          <div class="field-group">
+            <label for="vpDesignation">Designation <span class="required-star">*</span></label>
+            <select id="vpDesignation" name="vpDesignation">
+              <option value="Vice President">Vice President</option>
+              <option value="POC">POC (Point of Contact)</option>
+            </select>
+            <span class="error-msg" id="vpDesignation-error"></span>
+          </div>
+
+          <div class="field-group">
+            <label for="vpFullName">Full Name <span class="required-star">*</span></label>
+            <input
+              type="text"
+              id="vpFullName"
+              name="vpFullName"
+              placeholder="e.g. Priya Nair"
+              maxlength="100"
+              autocomplete="name"
+            />
+            <span class="error-msg" id="vpFullName-error"></span>
+          </div>
+
+          <div class="field-group">
+            <label for="vpUSN">USN (University Serial Number) <span class="required-star">*</span></label>
+            <input
+              type="text"
+              id="vpUSN"
+              name="vpUSN"
+              placeholder="e.g. 1RV21CS078"
+              maxlength="10"
+              style="text-transform: uppercase;"
+            />
+            <span class="error-msg" id="vpUSN-error"></span>
+          </div>
+
+          <div class="field-group">
+            <label for="vpPhone">Phone Number <span class="required-star">*</span></label>
+            <input
+              type="tel"
+              id="vpPhone"
+              name="vpPhone"
+              placeholder="e.g. 9123456780"
+              maxlength="10"
+              autocomplete="tel"
+            />
+            <span class="error-msg" id="vpPhone-error"></span>
+          </div>
+
+          <div class="field-group">
+            <label for="vpEmail">Email Address <span class="required-star">*</span></label>
+            <input
+              type="email"
+              id="vpEmail"
+              name="vpEmail"
+              placeholder="e.g. priya@rvce.edu.in"
+              autocomplete="email"
+            />
+            <span class="error-msg" id="vpEmail-error"></span>
+          </div>
+        </section>
+
+        <!-- Section 4: Additional Details -->
+        <section class="form-section">
+          <h2 class="section-title">Additional Details</h2>
+
+          <div class="field-group">
+            <label for="additionalDetails">Any additional information <span class="optional-tag">(optional)</span></label>
+            <textarea
+              id="additionalDetails"
+              name="additionalDetails"
+              rows="4"
+              placeholder="e.g. Meeting schedule, club achievements, special requirements, etc."
+              maxlength="500"
+            ></textarea>
+            <span class="char-count" id="additionalDetails-count">0 / 500</span>
+            <span class="error-msg" id="additionalDetails-error"></span>
+          </div>
+        </section>
+
+        <!-- Submit -->
+        <div class="submit-area">
+          <button type="submit" id="submitBtn" class="btn-submit">
+            Submit Registration
+          </button>
+        </div>
+
+      </form>
+    </main>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-logos">
+        <img src="https://sip-volunteer.vercel.app/logos/RVCE_Logo.png" alt="RVCE Logo" />
+      </div>
+      <div class="footer-text">SIP 2026 — Organising Committee</div>
+      <div class="footer-copy">© 2026 RVCE. All rights reserved.</div>
+    </div>
+  </footer>
 
   <script type="module" src="js/main.js"></script>
+
+  <!-- ===== DOT CANVAS ANIMATION ===== -->
+  <script>
+    (function () {
+      const canvas = document.getElementById('dotCanvas');
+      const ctx = canvas.getContext('2d');
+
+      const DOT_SPACING = 28;
+      const DOT_RADIUS_BASE = 1.5;
+      const DOT_RADIUS_ACTIVE = 4.5;
+      const INFLUENCE_RADIUS = 120;
+      const DOT_COLOR_DEFAULT = 'rgba(209, 209, 209, 0.8)';
+      const DOT_COLOR_ACTIVE = '#ed5e4a';
+
+      let mouse = { x: -9999, y: -9999 };
+      let cols = 0, rows = 0;
+      let animFrameId = null;
+
+      function resize() {
+        const hero = document.getElementById('hero');
+        canvas.width = hero.offsetWidth;
+        canvas.height = hero.offsetHeight;
+        cols = Math.ceil(canvas.width / DOT_SPACING) + 1;
+        rows = Math.ceil(canvas.height / DOT_SPACING) + 1;
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        for (let r = 0; r < rows; r++) {
+          for (let c = 0; c < cols; c++) {
+            const x = c * DOT_SPACING;
+            const y = r * DOT_SPACING;
+
+            const dx = x - mouse.x;
+            const dy = y - mouse.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            const ratio = Math.max(0, 1 - dist / INFLUENCE_RADIUS);
+            const radius = DOT_RADIUS_BASE + (DOT_RADIUS_ACTIVE - DOT_RADIUS_BASE) * ratio;
+
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, Math.PI * 2);
+
+            if (ratio > 0) {
+              // interpolate between default grey and orange
+              const alpha = 0.4 + 0.6 * ratio;
+              ctx.fillStyle = `rgba(237, 94, 74, ${alpha})`;
+            } else {
+              ctx.fillStyle = DOT_COLOR_DEFAULT;
+            }
+            ctx.fill();
+          }
+        }
+
+        animFrameId = requestAnimationFrame(draw);
+      }
+
+      function onMouseMove(e) {
+        const rect = canvas.getBoundingClientRect();
+        mouse.x = e.clientX - rect.left;
+        mouse.y = e.clientY - rect.top;
+      }
+
+      function onMouseLeave() {
+        mouse.x = -9999;
+        mouse.y = -9999;
+      }
+
+      resize();
+      window.addEventListener('resize', resize);
+      document.getElementById('hero').addEventListener('mousemove', onMouseMove);
+      document.getElementById('hero').addEventListener('mouseleave', onMouseLeave);
+      draw();
+    })();
+
+    // Navbar scroll effect
+    const nav = document.getElementById('siteNav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+  </script>
 </body>
 </html>
