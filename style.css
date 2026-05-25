@@ -77,12 +77,12 @@ body {
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 16px;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 12px;
 }
 
 .nav-brand {
@@ -195,7 +195,7 @@ body {
    ============================================================ */
 .hero {
   position: relative;
-  min-height: calc(90vh - var(--nav-height));
+  min-height: calc(60vh - var(--nav-height));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -218,15 +218,15 @@ body {
   position: relative;
   z-index: 10;
   max-width: 800px;
-  padding: 60px 24px;
+  padding: 40px 20px;
 }
 
 .hero-title {
-  font-size: clamp(2.4rem, 8vw, 5.5rem);
+  font-size: clamp(2rem, 10vw, 5.5rem);
   font-weight: 900;
   line-height: 1.05;
   letter-spacing: -0.03em;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
 
 .hero-title-dark {
@@ -721,8 +721,71 @@ textarea.field-error {
 }
 
 /* ============================================================
-   Responsive
+   Mobile Responsive
    ============================================================ */
+
+/* Prevent navbar CTA from clipping on small screens */
+@media (max-width: 480px) {
+  .nav-cta {
+    display: none;
+  }
+
+  .nav-container {
+    padding: 0 14px;
+    gap: 8px;
+  }
+
+  .nav-brand-text {
+    font-size: 0.68rem;
+    letter-spacing: 0.02em;
+  }
+
+  .nav-brand-sub {
+    display: none;
+  }
+
+  .nav-logo-wrap {
+    width: 34px;
+    height: 34px;
+  }
+
+  .nav-logo {
+    width: 24px;
+    height: 24px;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-content {
+    padding: 48px 20px 40px;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 481px) and (max-width: 767px) {
+  .nav-cta {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+
+  .hero {
+    min-height: calc(70vh - var(--nav-height));
+  }
+}
+
+/* Desktop hero height */
+@media (min-width: 768px) {
+  .nav-brand-text {
+    font-size: 0.85rem;
+  }
+
+  .hero {
+    min-height: calc(85vh - var(--nav-height));
+  }
+}
+
 @media (min-width: 640px) {
   .content-wrapper {
     padding: 80px 32px 100px;
@@ -734,11 +797,5 @@ textarea.field-error {
 
   .form-section {
     padding: 40px 40px;
-  }
-}
-
-@media (min-width: 768px) {
-  .nav-brand-text {
-    font-size: 0.85rem;
   }
 }
