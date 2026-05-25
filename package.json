@@ -1,0 +1,13 @@
+{
+  "name": "college-club-registration-form",
+  "version": "1.0.0",
+  "description": "College club registration form with Google Sheets integration via SheetDB",
+  "type": "module",
+  "scripts": {
+    "test": "vitest --run"
+  },
+  "devDependencies": {
+    "fast-check": "3.19.0",
+    "vitest": "1.6.0"
+  }
+}
