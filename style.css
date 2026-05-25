@@ -88,24 +88,55 @@ body {
 .nav-brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   text-decoration: none;
   flex-shrink: 0;
 }
 
+.nav-logo-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: border-color var(--transition);
+}
+
+.nav-brand:hover .nav-logo-wrap {
+  border-color: var(--primary);
+}
+
 .nav-logo {
-  width: 36px;
-  height: 36px;
+  width: 30px;
+  height: 30px;
   object-fit: contain;
 }
 
+.nav-brand-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
 .nav-brand-text {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 700;
   color: var(--text-dark);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-  line-height: 1.2;
+  letter-spacing: 0.05em;
+}
+
+.nav-brand-sub {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 .nav-links {
@@ -621,34 +652,62 @@ textarea.field-error {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 16px;
   text-align: center;
 }
 
-.footer-logos img {
-  height: 48px;
-  object-fit: contain;
-  transition: transform var(--transition), opacity var(--transition);
-  opacity: 0.85;
+.footer-logo-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 4px;
+  transition: border-color var(--transition), box-shadow var(--transition);
 }
 
-.footer-logos img:hover {
-  opacity: 1;
-  transform: scale(1.05);
+.footer-logo-wrap:hover {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px var(--primary-alpha);
+}
+
+.footer-logo-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .footer-text {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--text-dark);
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
 
+.footer-subtext {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
 .footer-copy {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--text-muted);
   font-weight: 400;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+  width: 100%;
 }
 
 /* ============================================================
