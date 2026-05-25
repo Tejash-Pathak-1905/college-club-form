@@ -89,8 +89,9 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
-  text-decoration: none;
   flex-shrink: 0;
+  cursor: default;
+  user-select: none;
 }
 
 .nav-logo-wrap {
